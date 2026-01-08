@@ -7,15 +7,12 @@ db.collection("questions")
 
     snapshot.forEach(doc => {
       const data = doc.data();
-
       const li = document.createElement("li");
       li.className = "review-item";
       li.dataset.id = doc.id;
       li.draggable = true;
 
-      if (data.approved) {
-        li.classList.add("approved");
-      }
+      if (data.approved) li.classList.add("approved");
 
       li.innerHTML = `
         <span>${data.question}</span>
@@ -31,9 +28,7 @@ db.collection("questions")
   });
 
 function approve(id) {
-  db.collection("questions").doc(id).update({
-    approved: true
-  });
+  db.collection("questions").doc(id).update({ approved: true });
 }
 
 function removeQ(id) {
