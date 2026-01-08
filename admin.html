@@ -4,23 +4,18 @@
   <meta charset="UTF-8" />
   <title>질문 검토</title>
   <link rel="stylesheet" href="/eunbin_question/css/admin.css" />
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
-  <h2 class="title">질문 검토</h2>
-  <p class="desc">드래그로 순서 변경 / 승인 후 최종 화면에 표시됩니다</p>
+<h2 class="title">질문 검토</h2>
+<p class="desc">드래그로 순서 변경 / 승인 후 최종 화면에 표시됩니다</p>
 
-  <ul id="reviewList"></ul>
+<ul id="reviewList"></ul>
 
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
-  <!-- 공통 Firebase -->
-  <script src="/eunbin_question/js/firebase.js"></script>
-
-  <!-- 관리자 로직 -->
-  <script src="/eunbin_question/js/admin.js"></script>
-
+<script src="/eunbin_question/js/firebase.js"></script>
+<script src="/eunbin_question/js/admin.js"></script>
 </body>
 </html>
