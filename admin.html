@@ -7,13 +7,20 @@
 </head>
 <body>
 
-<h2 class="title">질문 검토</h2>
-<p class="desc">드래그로 순서 변경 / 승인 후 최종 화면에 표시됩니다</p>
+  <h2 class="title">질문 검토</h2>
+  <p class="desc">드래그로 순서 변경 / 승인 후 최종 화면에 표시됩니다</p>
 
-<ul id="reviewList"></ul>
+  <ul id="reviewList"></ul>
 
-<!-- Firebase -->
-<script src="js/firebase.js"></script>
-<script src="js/admin.js"></script>
+  <!-- ✅ Firebase SDK (HTML에서만!) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- ✅ 공통 Firebase 설정 (script 태그 ❌, JS 코드만 있음) -->
+  <script src="js/firebase.js"></script>
+
+  <!-- ✅ 관리자 로직 -->
+  <script src="js/admin.js"></script>
+
 </body>
 </html>
