@@ -1,5 +1,4 @@
-// ❌ 여기엔 <script> 태그 절대 없음
-
+// Firebase 공통 설정
 const firebaseConfig = {
   apiKey: "AIzaSyDtDtadwFVoYMSahJyeNKqh-3NfwSagi-o",
   authDomain: "eunbin-4ba29.firebaseapp.com",
@@ -9,5 +8,9 @@ const firebaseConfig = {
   appId: "1:1042774764206:web:1068894ff8f3c583ef5b3f",
 };
 
-firebase.initializeApp(firebaseConfig);
+// Firebase 초기화 (중복 방지)
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
 const db = firebase.firestore();
