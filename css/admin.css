@@ -1,0 +1,29 @@
+body {
+  font-family: Pretendard, sans-serif;
+  padding: 40px;
+}
+
+.title, .desc {
+  text-align: center;
+}
+
+#reviewList {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0;
+}
+
+.review-item {
+  list-style: none;
+  background: #fff;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  cursor: grab;
+}
+
+.review-item.approved {
+  border-left: 6px solid #2ecc71;
+}
