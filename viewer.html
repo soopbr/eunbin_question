@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <title>질문 보기</title>
-  <link rel="stylesheet" href="css/viewer.css" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/eunbin_question/css/viewer.css" />
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
@@ -19,7 +25,11 @@
   <button id="next">다음</button>
 </div>
 
-<script src="js/firebase.js"></script>
-<script src="js/viewer.js"></script>
+<!-- 공통 Firebase 설정 -->
+<script src="/eunbin_question/js/firebase.js"></script>
+
+<!-- 질문 뷰어 로직 -->
+<script src="/eunbin_question/js/viewer.js"></script>
+
 </body>
 </html>
