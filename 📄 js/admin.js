@@ -1,6 +1,5 @@
 const list = document.getElementById("reviewList");
 
-/* 질문 실시간 불러오기 */
 db.collection("questions")
   .orderBy("order", "asc")
   .onSnapshot(snapshot => {
@@ -8,17 +7,19 @@ db.collection("questions")
 
     snapshot.forEach(doc => {
       const data = doc.data();
-      const li = document.createElement("li");
 
+      const li = document.createElement("li");
       li.className = "review-item";
       li.dataset.id = doc.id;
       li.draggable = true;
 
-      if (data.approved) li.classList.add("approved");
+      if (data.approved) {
+        li.classList.add("approved");
+      }
 
       li.innerHTML = `
         <span>${data.question}</span>
-        <div class="actions">
+        <div>
           <button onclick="approve('${doc.id}')">승인</button>
           <button onclick="removeQ('${doc.id}')">삭제</button>
         </div>
@@ -29,21 +30,19 @@ db.collection("questions")
     });
   });
 
-/* 승인 */
 function approve(id) {
   db.collection("questions").doc(id).update({
     approved: true
   });
 }
 
-/* 삭제 */
 function removeQ(id) {
   if (confirm("삭제할까요?")) {
     db.collection("questions").doc(id).delete();
   }
 }
 
-/* 드래그 정렬 */
+// 드래그 정렬
 let dragEl = null;
 
 function addDrag(el) {
@@ -55,7 +54,6 @@ function addDrag(el) {
   };
 }
 
-/* 순서 Firestore 반영 */
 function updateOrder() {
   [...list.children].forEach((el, i) => {
     db.collection("questions").doc(el.dataset.id).update({
